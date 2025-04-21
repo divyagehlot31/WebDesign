@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+$body-font: Roboto, sans-serif;
+$new-font: Manrope,sans-serif;
+
+$BlueGray-200 :#E2E8F0;
+$BlueGray-600 :#475569;
+$BlueGray-900 :  #21272A;
+$Blue-600 : #0F62FE;
+
+$White : #FFFFFF;
+
+$body-font-size :16px;
+
+//typografy
+@mixin Heading1-M{
+    font-size: 72px;
+    line-height: 110%;
+    font-weight: 800;
+}
+
+@mixin Heading6{
+    font-size: 24px;
+    line-height: 110%;
+    font-weight: 700;
+    text-align: center;
+}
+
+@mixin Heading5{
+    font-size: 32px;
+    line-height: 110%;
+    font-weight: 700;
+}
+
+@mixin Body-L{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+}
+@mixin Body-M{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+@mixin Heading2{
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 110%;
+    text-align: center;
+
+}
+
+@mixin Subtitle-XL{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 110%;
+}
+
+@mixin Subtitle-M{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 110%;
+}
+
+@mixin Caption-M{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 3px;
+    text-transform:uppercase;
+}
+
+@mixin Body-XXL{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+
+
+
+@mixin Button-M {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding:12px 8px;
+    Border: none;
+    border-radius: 8px;
+
+   
+}
+
+@mixin Button-M2 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: $BlueGray-900;
+    padding:12px;
+    Border: 2px $Blue-600;
+    background-color: $Blue-600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+
+    &:hover {
+        background-color: rgb(13, 18, 172);
+        color: $White;
+
+
+      }
+}
+
+
+
+
+
+@mixin All-Button {
+    background-color: $Blue-600;
+    color: $White;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 20px 24px;
+    border-radius:8px;
+    border: 2px $Blue-600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+    }
+  }
+
+  @mixin Button-L {
+    color:$Blue-600;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 16px 8px;
+    border-radius:8px;
+    border: 2px $Blue-600;
+    cursor: pointer;
+  
+    &:hover {
+    }
+  }
+
+
