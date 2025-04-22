@@ -14,10 +14,19 @@
   //navbar
 .navbar-container {
     width: 100%;
-    max-width: 1440px;
+    // max-width: 1440px;
     border: 1px solid $BlueGray-200;
     padding: 10px;
     margin: 0 auto;
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+    background-color: $White;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
 }
 
 .navbar {
@@ -52,10 +61,10 @@
   }
   
 .dropdown-icon {
-    width: 12px;
-    height: 12px;
+    // width: 12px;
+    // height: 12px;
     margin-left: 6px;
-    vertical-align: middle;
+    // vertical-align: middle;
   }
   
 
@@ -91,11 +100,10 @@
     border: none;
 }
 
-//main-section
-@import 'variables';
 
 // Hero Section
 .hero-section {
+  font-family: $body-font;
   padding: 80px 0;
 }
 
@@ -105,20 +113,15 @@
 
 .hero-title {
   font-family: $body-font;
-  font-weight: 800;
-  font-size: 72px;
-  line-height: 110%;
-  letter-spacing: 0;
+  @include Heading1-M;
   color: $BlueGray-900;
   margin-bottom: 24px;
 }
 
+
 .hero-description {
   font-family: $body-font;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 160%;
-  letter-spacing: 0;
+  @include Body-L;
   color: $BlueGray-900;
   margin-bottom: 32px;
 }
@@ -130,23 +133,13 @@
 }
 
 .btn-get-started {
-  width: 225px;
-  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid $Blue-600;
-  border-radius: 8px;
-  padding: 20px 24px;
-  font-family: $body-font;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
-  letter-spacing: 0.5px;
   color: $White;
-  background-color: $Blue-600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  @include All-Button;
+  
   
   &:hover {
     background-color: darken($Blue-600, 10%);
@@ -155,21 +148,11 @@
 }
 
 .btn-watch-video {
-  width: 190px;
-  height: 56px;
+@include Button-L;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: 8px;
-  padding: 16px 8px;
-  font-family: $body-font;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-  color: $Blue-600;
-  background-color: $White;
   text-decoration: none;
   transition: all 0.3s ease;
   
@@ -189,27 +172,161 @@
   justify-content: center;
   align-items: center;
   
-  img {
-    max-width: 100%;
-    height: auto;
+  // img {
+  //   max-width: 100%;
+  //   height: auto;
+  // }
+}
+////section2 - feature section
+/// 
+.feature-section{
+  @include liner-bg;
+
+}
+.fe-row{
+  display: flex;
+  // gap: 48px;
+  padding: 80px 0;
+}
+.fe {
+  display: flex !important;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.fe-heading{
+  @include Heading6;
+  color: $BlueGray-900;
+}
+
+.fe-text{
+  text-align: center;
+  @include Body-L;
+  color: $BlueGray-900;
+}
+
+.tab{
+  display: flex;          
+  align-items: center;     
+  justify-content: center;
+}
+
+//slider1 and 2 section3 and 4
+.slider1-content, .slider2-content{
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  gap: 80px;
+}
+.s1-heading, .s2-heading {
+  color: $BlueGray-900;
+  @include Heading2;
+}
+
+.s1-subheading, .s2-subheading {
+  color: $BlueGray-900;
+  @include Body-L;
+  font-family: $body-font;
+}
+
+// accordion Styles
+.accordion-container {
+  width: 100%;
+  padding: 24px;
+}
+
+.accordion-item {
+  width: 100%;
+  margin-bottom: 24px;
+  border-left: 3px solid $BlueGray-300;
+  
+  &.active {
+    border-left: 3px solid $Blue-600;
   }
 }
+
+.accordion-header {
+  width: 100%;
+  padding: 8px 8px 8px 48px;
+  position: relative;
+  color: $BlueGray-900;
+  cursor: pointer;
+  @include Subtitle-XL;
+  transition: border-color 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding-left: 48px;
+  padding-right: 8px;
+  width: 100%;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  
+  &.active {
+    max-height: 200px;
+    opacity: 1;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  
+  p {
+    @include Body-L;
+    color: $BlueGray-900;
+  }
+}
+.slider2-btn {
+    color: $White;
+    text-decoration: none;
+    @include All-Button;
+    
+    
+    &:hover {
+      background-color: darken($Blue-600, 10%);
+      color: $White;
+    }
+  }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
 
 // Media Queries
 @media (max-width: 1400px) {
-  .hero-title {
-    font-size: 60px;
-  }
+ 
 }
 
 @media (max-width: 1200px) {
-  .hero-title {
-    font-size: 48px;
+  .hero-img{
+    max-width: 100%;
+    height: auto;
+  }
+  //feature section
+  .feature-section {
+    padding-top: 40px ;
+  }
+
+  //slider1-section
+  .slider1-section, .slider2-section {
+    // padding: 60px 0;
   }
 }
 
 @media (max-width: 992px) {
-
+  .hero-img{
+    max-width: 100%;
+    height: auto;
+  }
+//navbar-section
     .navbar-container {
         height: auto;
       }
@@ -238,6 +355,33 @@
   .hero-buttons {
     justify-content: center;
   }
+  //feature section
+  .fe-row {
+    gap: 20px;
+    padding: 10px 0px;
+  }
+  
+  .fe {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  //slider1 section
+  .s1-row, .s2-row  {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .s1-img, .s2-img {
+    // max-width: 80%;
+    // margin: 0 auto;
+    // display: block;
+  }
+  //accodian
+  
+  .accordion-container {
+    // padding: 16px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -253,49 +397,176 @@
         margin-bottom: 10px;
       }
   // Hero Section
-  .hero-section {
-    padding: 40px 0;
+  .hero-content {
+    padding: 40px 30px;
   }
 
   .hero-title {
-    font-size: 36px;
+    @include Heading4;
+  }
+  .hero-description {
+    @include Body-M;
   }
 
   .btn-get-started {
-    width: 180px;
-    height: 56px;
-    font-size: 20px;
-    padding: 16px 16px;
+    @include Button-M;
+    padding: 12px 18px;
   }
 
   .btn-watch-video {
-    width: 160px;
-    font-size: 18px;
+    padding: 12px 8px;
+  }
+  .hero-buttons {
+    gap: 32px;
+  }
+
+  .hero-img{
+    max-width: 100%;
+    height: auto;
+  }
+
+
+
+  //feature section
+  .feature-section {
+    padding-top: 40px ;
+  }
+  
+  .fe {
+    align-items: center;
+    text-align: center;
+    
+    img {
+      margin-bottom: 16px;
+    }
+  }
+  
+  .fe-heading {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+  
+  .fe-text {
+    text-align: center;
+  }
+
+  //slider 1 section
+  .slider1-section, .slider2-section {
+    padding-top: 40px;
+  }
+  
+  .s1-heading, .s2-heading {
+    @include Heading5;
+  }
+  
+  .s1-subheading, .s2-subheading {
+    @include Body-L;
+    margin-bottom: 32px;
+  }
+  //accordian
+  .accordion-header {
+    padding-left: 32px;
+    @include Subtitle-L;
+  }
+  
+  .accordion-content {
+    padding-left: 32px;
+    
+    p {
+      @include Body-M;
+
+    }
   }
 }
 
 @media (max-width: 576px) {
   .hero-description {
-    font-size: 16px;
+    @include Body-M;
   }
 
-  .hero-buttons {
-    gap: 10px;
-  }
-
-  .btn-get-started {
-    width: 150px;
-    font-size: 18px;
-    padding: 16px 8px;
-  }
+ 
 
   .btn-watch-video {
-    width: 130px;
-    font-size: 16px;
-    padding: 16px 4px;
+    // width: 130px;
+    // font-size: 16px;
+    padding: 12px 8px;
   }
 
   .video-icon {
     transform: scale(0.8);
+  }
+
+  //feature section
+  .feature-section {
+    // padding: 32px 0;
+  }
+  
+  .fe-row {
+    gap: 24px;
+  }
+  
+  .fe {
+    padding: 0 40px;
+    margin-bottom: 24px;
+    
+    img {
+      // height: 48px;
+      margin-bottom: 12px;
+    }
+  }
+  
+  .fe-heading {
+@include Heading6;
+    margin-bottom: 8px;
+    color: $BlueGray-900;
+  }
+  
+  .fe-text {
+    @include Body-L;
+    color: $BlueGray-900;
+  }
+  
+  //slider1 section
+  .slider1-section, .slider2-section {
+    padding-top: 32px ;
+  }
+  .slider1-content, .slider2-content{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .s1-heading, .s2-heading {
+    @include Heading5;
+  }
+  
+  .s1-subheading, .s2-subheading {
+    @include Body-L;
+    margin-bottom: 32px;
+    text-align: center;
+    padding: 0 15px;
+
+  }
+  
+  .s1-img, .s2-img  {
+    max-width: 100%;
+  }
+
+  // accordian
+  .accordion-item {
+    margin-bottom: 16px;
+  }
+  
+  .accordion-header {
+    padding: 8px 8px 8px 24px;
+  }
+  
+  .accordion-content {
+    padding-left: 24px;
+    
+    &.active {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
   }
 }

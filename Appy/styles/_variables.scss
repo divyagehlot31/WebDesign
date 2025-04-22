@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-$body-font: Roboto, sans-serif;
-$new-font: Manrope,sans-serif;
+$body-font: 'Roboto', sans-serif;
+// $new-font: Manrope,sans-serif;
 
 $BlueGray-200 :#E2E8F0;
+$BlueGray-300 :#CBD5E1;
 $BlueGray-600 :#475569;
 $BlueGray-900 :  #21272A;
 $Blue-600 : #0F62FE;
@@ -12,6 +13,12 @@ $White : #FFFFFF;
 
 $body-font-size :16px;
 
+$gradient-start: #F1F5F9;
+$gradient-end: rgba(255, 255, 255, 0);
+
+@mixin liner-bg {
+  background: linear-gradient(180deg, $gradient-start 0%, $gradient-end 100%);
+}
 //typografy
 @mixin Heading1-M{
     font-size: 72px;
@@ -25,6 +32,14 @@ $body-font-size :16px;
     font-weight: 700;
     text-align: center;
 }
+
+@mixin Heading4{
+    font-size: 40px;
+    line-height: 110%;
+    font-weight: 700;
+}
+
+
 
 @mixin Heading5{
     font-size: 32px;
@@ -57,6 +72,12 @@ $body-font-size :16px;
     line-height: 110%;
 }
 
+@mixin Subtitle-L{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 110%;
+}
+
 @mixin Subtitle-M{
     font-size: 16px;
     font-weight: 500;
@@ -85,10 +106,8 @@ $body-font-size :16px;
     font-weight: 500;
     line-height: 24px;
     padding:12px 8px;
-    Border: none;
+    // Border: 2px solid $Blue-600;
     border-radius: 8px;
-
-   
 }
 
 @mixin Button-M2 {
@@ -97,7 +116,7 @@ $body-font-size :16px;
     line-height: 24px;
     color: $BlueGray-900;
     padding:12px;
-    Border: 2px $Blue-600;
+    // Border: 2px $Blue-600;
     background-color: $Blue-600;
     border-radius: 8px;
     transition: background-color 0.3s ease;
@@ -125,7 +144,7 @@ $body-font-size :16px;
     border-radius:8px;
     border: 2px $Blue-600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
   
     &:hover {
     }
