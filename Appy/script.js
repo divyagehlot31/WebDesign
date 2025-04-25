@@ -248,6 +248,7 @@ const footerHTML = footerData.map((category) => {
 }).join('');
 
 document.querySelector('.footer-links .row').innerHTML = footerHTML;
+
 //slider 3
 
 // const slider3Data = [
@@ -260,7 +261,7 @@ document.querySelector('.footer-links .row').innerHTML = footerHTML;
 //     image: "./assets/images/slick-img1.png",
 //   },
 //   {
-//     heading: "Success Stories",
+//     heading: "Success Stories2",
 //     description:
 //       " Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo. ",
 //     titile: "Marie Poirot,",
@@ -268,7 +269,7 @@ document.querySelector('.footer-links .row').innerHTML = footerHTML;
 //     image: "./assets/images/slick-img1.png",
 //   },
 //   {
-//     heading: "Success Stories",
+//     heading: "Success Stories3",
 //     description:
 //       " Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo. ",
 //     titile: "Marie Poirot,",
@@ -292,9 +293,65 @@ document.querySelector('.footer-links .row').innerHTML = footerHTML;
 //   <h1>${slider3.heading}</h1>
 //   <p>${slider3.description}</p>
 //   <h4>${slider3.titile}</h4>
-//   <h5>${slider3.titile}</h5>
+//   <h5>${slider3.subtitle}</h5>
 // </div>
 // </div>
 //   `
 //   )
 //   .join("");
+
+const slider3Data = [
+  {
+    imgSrc: "assets/images/slick-img1.png",
+    heading: "Success Stories",
+    text: "Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.",
+    author: "Marie Poirot",
+    company: "Bigapp"
+  },
+  {
+    imgSrc: "assets/images/slick-img1.png",
+    heading: "Success Stories1",
+    text: "Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.",
+    author: "Marie Poirot1",
+    company: "Bigapp1"
+   
+  },
+  {
+    imgSrc: "assets/images/slick-img1.png",
+    heading: "Success Stories2",
+    text: "Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.",
+    author: "Marie Poirot2",
+    company: "Bigapp2"
+  }
+];
+
+const carouselInnerHTML = slider3Data.map((item, index) => {
+  return `
+    <div class="carousel-item ${index === 0 ? 'active' : ''}">
+      <div class="row carousel-rows">
+        <div class="col-lg-6 col-md-12 carousel-item1">
+          <img src="${item.imgSrc}" class="carousel-img" alt="carousel-img" />
+        </div>
+        <div class="col-lg-6 col-md-12 carousel-item2">
+          <div class="carousel-content">
+            <div>
+              <h1 class="carousel-heading">${item.heading}</h1>
+              <p class="carousel-text">
+                <span class="highlight-start">“</span>
+                ${item.text}
+                <span class="highlight-end">”</span>
+              </p>
+            </div>
+            <div class="carousel-heads">
+              ${item.author},<br>
+              <span class="name">${item.company}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}).join('');
+document.querySelector('#slider3-container .carousel-inner').innerHTML = carouselInnerHTML;
+
+
