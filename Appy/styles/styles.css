@@ -681,8 +681,7 @@
   transition: opacity 0.3s ease;
   text-decoration: none;
 }
-
-.social-tooltip {
+.social-icons .social-tooltip {
   position: absolute;
   bottom: 100%;
   left: 50%;
@@ -695,11 +694,8 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  pointer-events: none;
-  white-space: nowrap;
 }
-
-.social-icon:hover .social-tooltip {
+.social-icons .social-icon:hover .social-tooltip {
   opacity: 1;
   visibility: visible;
 }
