@@ -1,0 +1,89 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixin.scss' as mixins;
+
+
+.navbar-container {
+    width: 100%;
+    // max-width: 1440px;
+    border: 1px solid vars.$BlueGray-200;
+    padding: 10px;
+    margin: 0 auto;
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+    background-color: vars.$White;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  
+  .navbar {
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .navbar-brand {
+    @include mixins.Heading5;
+    color: vars.$Blue-600;
+  }
+  
+  .navbar-nav {
+    gap: 8px;
+    margin-left: 20px;
+  }
+  
+  .nav-link {
+    @include mixins.Button-M;
+    color: vars.$BlueGray-900;
+  
+    &:hover {
+      color: #011950;
+    }
+  }
+  
+  .dropdown-toggle::after {
+    display: none;
+    vertical-align: middle;
+  }
+  
+  .dropdown-icon {
+    // width: 12px;
+    // height: 12px;
+    margin-left: 6px;
+    // vertical-align: middle;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .login-btn {
+    @include mixins.Button-M;
+    color: vars.$Blue-600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &:hover {
+      color: rgb(15, 8, 57);
+    }
+  }
+  
+  .get-started-btn {
+    @include mixins.Button-M2;
+    color: vars.$White;
+    background-color: vars.$Blue-600;
+    border: 2px solid vars.$Blue-600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }

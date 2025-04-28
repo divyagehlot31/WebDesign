@@ -1,0 +1,77 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixin.scss' as mixins;
+
+.hero-section {
+    padding: 80px 0;
+  }
+  
+  .hero-row {
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-family: vars.$body-font;
+    @include  mixins.Heading1-M;
+    color: vars.$BlueGray-900;
+    margin-bottom: 24px;
+  }
+  
+  .hero-description {
+    @include  mixins.Body-L;
+    color: vars.$BlueGray-900;
+    margin-bottom: 32px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+  }
+  
+  .btn-get-started {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: vars.$White;
+    text-decoration: none;
+    @include  mixins.All-Button;
+  
+    &:hover {
+      background-color: darken(vars.$Blue-600, 10%);
+      color: vars.$White;
+    }
+  }
+  
+  .btn-watch-video {
+    @include  mixins.Button-L;
+    font-family: vars.$body-font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: lighten(vars.$Blue-600, 45%);
+    }
+  }
+  
+  .video-icon {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-image {
+    // max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    // img {
+    //   // max-width: 100%;
+    //   height: auto;
+    // }
+  }
