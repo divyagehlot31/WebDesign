@@ -1,0 +1,61 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixin.scss' as mixins;
+
+.services-section{
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: vars.$BlueGray-100;
+    gap: 45px;
+  }
+  
+  .services-row{
+    display: flex;
+    // align-items: center;
+  }
+  
+  .services-content{
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+    gap: 24px;
+    padding-top: 100PX;
+    // margin: 50px 0px;
+  }
+  
+  .services-title{
+    font-family: vars.$body-font;
+    @include mixins.Heading2;
+    color: vars.$BlueGray-900;
+    text-align: left;
+  }
+  
+  .services-description{
+    @include mixins.Body-L;
+    color: vars.$BlueGray-900;
+  }
+  
+  // .services-button {
+  //   display: flex;
+  //   gap: 16px;
+  // }
+  
+  .sbutton{
+    @include mixins.All-Button;
+    text-decoration: none;
+    &:hover {
+    //   background-color: darken($Blue-600, 10%);
+      color: vars.$White;
+    }
+  }
+  
+  .services-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .services-img {
+    object-fit: cover;
+  }
+  

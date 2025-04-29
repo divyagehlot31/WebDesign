@@ -1,7 +1,8 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Hero.scss'
-
+import Herobtn1 from '../ui/Herobtn1';
+import Herobtn2 from '../ui/Herobtn2';
 
 const Hero =() => {
   
@@ -19,13 +20,15 @@ const Hero =() => {
               adipiscing. Sollicitudin at velit, blandit tempus nunc in.
             </p>
             <div className="hero-buttons">
-              <a href="#" className="btn-get-started">Get Started</a>
-              <a href="#" className="btn-watch-video">
+              <Herobtn1/>
+              {/* <a href="#" className="btn-get-started">Get Started</a> */}
+              <Herobtn2/>
+              {/* <a href="#" className="btn-watch-video">
                 <span className="video-icon">
                   <img src="src/assets/icons/play-icon.svg" alt="Play Icon" />
                 </span>
                 Watch Video
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="col-lg-6 col-sm-12 hero-image">

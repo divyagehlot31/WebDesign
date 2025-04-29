@@ -1,6 +1,8 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.scss'
+import GetStarted from '../ui/GetStarted';
+import LoginBtn from '../ui/LoginBtn';
 
 const Navbar = () => {
   return (
@@ -56,8 +58,10 @@ const Navbar = () => {
                 </li>
               </ul>
               <div className="nav-buttons">
-                <a href="#" className="login-btn text-decoration-none">Log In</a>
-                <a href="#" className="get-started-btn text-decoration-none">Get Started</a>
+                <LoginBtn/>
+                {/* <a href="#" className="login-btn text-decoration-none">Log In</a> */}
+                <GetStarted/>
+                {/* <a href="#" className="get-started-btn text-decoration-none">Get Started</a> */}
               </div>
             </div>
           </div>

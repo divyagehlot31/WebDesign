@@ -1,0 +1,153 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixin.scss' as mixins;
+
+.slider3-section {
+    padding: 60px 0;
+    background-color: vars.$BlueGray-100;
+    // position: relative;
+    overflow: hidden;
+  }
+  .carousel-rows {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .main-container {
+    max-width: 1280px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .inner-container {
+    max-width: 1136px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    gap: 48px;
+    display: flex;
+    flex-direction: column;
+    // flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .carousel-slide {
+    position: relative;
+  }
+  
+  // .carousel-img{
+  //   width: 630%;
+  //   height: 420%;
+  //   object-fit: cover;
+  // }
+  
+  .carousel-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .carousel-item1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-item2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .carousel-content {
+    display: flex;
+    flex-direction: column;
+    // flex-direction: row;
+    align-items: flex-start;
+    margin-left: 30px;
+    gap: 48px;
+    height: 100%;
+    position: relative;
+  }
+  
+  .carousel-heading {
+    position: relative;
+    margin-bottom: 10px;
+    @include mixins.Caption-M;
+    color: vars.$BlueGray-600;
+  }
+  
+  .carousel-text {
+    @include mixins.Body-XXL;
+    color: vars.$BlueGray-900;
+    margin-bottom: 16px;
+  }
+  
+  .highlight-end {
+    color: vars.$red-500;
+    @include mixins.Heading5;
+  }
+  .highlight-start {
+    color: vars.$yellow-500;
+    // padding: 0 4px;
+    @include mixins.Heading5;
+  }
+  
+  .carousel-heads {
+    color: vars.$BlueGray-900;
+    @include mixins.Body-L;
+  }
+  
+  .name {
+    color: vars.$BlueGray-900;
+    @include mixins.Subtitle-XL;
+  }
+  
+  .carousel-control-prev {
+    left: -50px;
+  }
+  
+  .carousel-control-next {
+    // width: 15px;
+    // height: 30px;
+    right: -50px;
+  }
+  
+  // .carousel-control-prev-icon{
+  // .carousel-control-next-icon {
+  
+  // }
+  // }
+  
+  // Custom Indicators
+  .carousel-indicators {
+    position: absolute !important;
+    // margin: 0 !important;
+    // padding: 0;
+    // display: flex;
+    bottom: 0;
+    left: 13%;
+    margin-bottom: 20px;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+    gap: 8px;
+  
+  
+    [data-bs-target]{
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      background-color: vars.$BlueGray-400;
+      transition: background-color 0.3s ease;
+  
+      &.active {
+        width: 32px;
+        border-radius: 10px;
+        background-color: vars.$Blue-600;
+      }
+    
+   
+  }
+  }

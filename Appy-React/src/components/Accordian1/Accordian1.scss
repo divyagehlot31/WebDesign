@@ -1,0 +1,87 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixin.scss' as mixins;
+
+.slider1-content,
+.slider2-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  gap: 80px;
+}
+.slider2-content {
+  padding-bottom: 80px;
+}
+
+.s1-heading,
+.s2-heading {
+  color: vars.$BlueGray-900;
+  @include mixins.Heading2;
+}
+
+.s1-subheading,
+.s2-subheading {
+  color: vars.$BlueGray-900;
+  @include mixins.Body-L;
+}
+
+// accordion Styles
+.accordion-container {
+  width: 100%;
+  padding: 24px;
+}
+
+.accordion-item {
+  width: 100%;
+  margin-bottom: 24px;
+  border-left: 3px solid vars.$BlueGray-300;
+
+  &.active {
+    border-left: 3px solid vars.$Blue-600;
+  }
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 8px 8px 8px 48px;
+  position: relative;
+  color: vars.$BlueGray-900;
+  cursor: pointer;
+  @include mixins.Subtitle-XL;
+  transition: border-color 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding-left: 48px;
+  padding-right: 8px;
+  width: 100%;
+
+  &.active {
+    max-height: 200px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  p {
+    @include mixins.Body-L;
+    color: vars.$BlueGray-900;
+  }
+}
+.slider2-btn {
+  color: vars.$White;
+  text-decoration: none;
+  @include mixins.All-Button;
+
+  &:hover {
+    // background-color: darken($Blue-600, 10%);
+    color: vars.$White;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
